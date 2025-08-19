@@ -22,4 +22,13 @@ public class AddressBook {
     public void addContact(Contact c) {
         contacts.add(c);
     }
+    // UC2: Edit Contact
+    public boolean editContact(String firstName, String lastName, Contact updated) {
+        Contact existing = findContact(firstName, lastName);
+        if (existing != null) {
+            existing.setAddress(updated.toString());
+            return true;
+        }
+        return false;
+    }
 }
